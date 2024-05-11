@@ -53,7 +53,7 @@ app.get("/", (req, res) => {
 });
 
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({
+  import("dotenv").config({
     path: ".env",
   });
 }
