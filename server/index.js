@@ -52,9 +52,9 @@ app.get("/", (req, res) => {
   res.send("Hello world! Your Server is Running...");
 });
 
-if (process.env.NODE_ENV !== "PRODUCTION") {
-  import("dotenv").config({
-    path: ".env",
+if (process.env.NODE_ENV !== "production") {
+  import("dotenv").then((dotenv) => {
+    dotenv.config();
   });
 }
 
