@@ -12,15 +12,19 @@ const ProfilePage = () => {
   const [user, setuser] = useState(null);
   const { userId } = useParams();
   const token = useSelector((state) => state.token);
+  const me = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const getUser = async () => {
-    const response = await fetch(`https://orevapedia.onrender.com/users/${userId}`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await fetch(
+      `https://orevapedia.onrender.com/users/${userId}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     const data = await response.json();
     setuser(data);
   };
@@ -49,11 +53,10 @@ const ProfilePage = () => {
           flexBasis={isNonMobileScreens ? "42px" : undefined}
           mt={isNonMobileScreens ? undefined : "2rem"}
         >
-          <MyPostWidget picturePath={user.picturePath} />
+          <MyPostWidget picturePath={me.picturePath} />
           <Box m="2rem 0" />
           <PostsWidget userId={userId} isProfile />
         </Box>
-       
       </Box>
     </Box>
   );
