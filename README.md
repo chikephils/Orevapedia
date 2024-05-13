@@ -68,7 +68,7 @@ The API was built with Node JS from scratch .
 •	cookie-parser
 
 ## API
-•	https://orevapediaapi.vercel.app/
+•	https://orevapedia.onrender.com/
 
 ## Deployments
 •	Client: Vercels
