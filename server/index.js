@@ -31,7 +31,7 @@ app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(
   cors({
-    origin: "https://orevapedia.vercel.app/",
+    origin: "https://orevapedia.vercel.app",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })
 );
