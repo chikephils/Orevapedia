@@ -30,6 +30,19 @@ const LoginPage = () => {
         </Typography>
         <Form />
       </Box>
+      <Box
+        width={isNonMobileScreens ? "50%" : "90%"}
+        p="1rem"
+        m="2rem auto"
+        borderRadius="1.5rem"
+        backgroundColor={theme.palette.background.alt}
+      >
+        <Typography fontWeight="500" variant="h5" align="center">
+          {" "}
+          Email: chikephils@gmail.com <br />
+          password: bellamy
+        </Typography>
+      </Box>
     </Box>
   );
 };
